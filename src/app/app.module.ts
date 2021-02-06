@@ -1,9 +1,8 @@
-// import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -38,7 +37,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpClient,
+    HttpClientModule,
     AppRoutingModule
 
   ],
