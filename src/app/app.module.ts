@@ -16,16 +16,15 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    
+
     DropdownDirective,
     AuthComponent,
     LoadingSpinnerComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,11 +33,17 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
-    ShoppingListModule
-
+    ShoppingListModule,
   ],
-  providers: [ShoppingListService, RecipeService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
-  bootstrap: [AppComponent]
+  providers: [
+    ShoppingListService,
+    RecipeService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
